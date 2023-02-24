@@ -2,6 +2,7 @@ import React from 'react'
 import {Box,Image,Flex,Text,Icon} from "@chakra-ui/react"
 import {AiOutlineSearch} from "react-icons/ai"
 import {FaUserAlt} from "react-icons/fa"
+import { Link } from 'react-router-dom'
 const Navbar = () => {
   return (
     <div>
@@ -13,7 +14,7 @@ const Navbar = () => {
         <Flex gap="20px">
         <Text fontSize={"20px"} fontWeight="500">Gift</Text>
         <Text fontSize={"20px"} fontWeight="500">New in</Text>
-        <Text fontSize={"20px"} fontWeight="500">Mens</Text>
+        <Link to="/mens"><Text fontSize={"20px"} fontWeight="500">Mens</Text></Link>
         <Text fontSize={"20px"} fontWeight="500">Women</Text>
         <Text fontSize={"20px"} fontWeight="500">Children</Text>
         <Text fontSize={"20px"} fontWeight="500">Outwear</Text>

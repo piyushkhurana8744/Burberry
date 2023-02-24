@@ -1,0 +1,15 @@
+.active_link{
+    position: relative;
+}
+.active_link::before{
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    left: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 3px;
+    background-color: #dbae52;/*0bc5ea */
+    outline: 2px solid white;
+}

@@ -40,15 +40,15 @@ app.post("/login",async(req,res)=>{
     const {email,password}=req.body
     try{
         const user=await UserModel.findOne({email})
-            bcrypt.compare(password, user.password, async(err, result)=> {
-                if(result){
-                 const token = jwt.sign({ userId: user._id }, 'login');
-                 res.send({msg:"user is login successfully",token:token})
-                }
-                else{
-                 res.send("invalid credentials")
-                }
-             })
+        bcrypt.compare(password, user.password, async(err, result)=> {
+            if(result){
+             const token = jwt.sign({ userId: user._id }, 'login');
+             res.send({msg:"user is login successfully",token:token,name:user.username})
+            }
+            else{
+             res.send("invalid credentials")
+            }
+         })
         
     }
     catch(err){

@@ -7,6 +7,7 @@ const {connection} = require("./configs/db")
 
 const userRouter=require("./routes/User.route")
 
+const productRouter = require("./routes/Product.route")
 
 app.use(cors())
 // -------------------------------------------------------------
@@ -14,6 +15,7 @@ app.use(express.json())
 
 app.use("/user",userRouter)
 
+app.use("/products",productRouter)
 
 // -------------------------SERVER-------------------------------
 app.listen(process.env.port,async()=>{

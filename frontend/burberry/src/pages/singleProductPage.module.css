@@ -1,0 +1,21 @@
+
+
+/* -----------------ADD TO BAG BUTTON--------------- */
+.bagBtn{
+    background-color:black;
+    color:white; 
+    width:280px;
+    height:42px;
+}
+
+.bagBtn:hover{
+    background-color: rgb(47, 47, 47);
+}
+
+
+
+/* -------------------SEND USING GIFT BTN------------------ */
+.giftBtn:hover{
+    background-color: black;
+    color: white;
+}

@@ -11,7 +11,7 @@ const UserItem = ({ imgUrl,userId,name, email,onlineStatus}) => {
       <Td>
         <VStack align="start">
           <Text>{name}</Text>
-          <Text fontSize='13px'>atuls2060</Text>
+          {/* <Text fontSize='13px'>atuls2060</Text> */}
         </VStack>
       </Td>
       <Td>{userId}</Td>

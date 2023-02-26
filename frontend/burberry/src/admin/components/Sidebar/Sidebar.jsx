@@ -27,17 +27,17 @@ import { NavLink } from 'react-router-dom';
 const Sidebar = () => {
     const { onClose } = useDisclosure();
     const LinkItems = [
-        { name: 'Home', path: "/", icon: FiHome },
-        { name: 'Trending', path: "/trending", icon: FiTrendingUp },
-        { name: 'Explore', path: "/explore", icon: FiCompass },
-        { name: 'Orders', path: "/orders", icon: FiTruck },
-        { name: 'Products', path: "/products", icon: FiPackage },
-        { name: 'Customers', path: "/customers", icon: FiUsers },
-        { name: 'Favourites', path: "/favorites", icon: FiStar },
-        { name: 'Add Product', path: "/addproduct", icon: FiPlus },
-        { name: 'Support', path: "/support", icon: FiHeadphones },
-        { name: 'Settings', path: "/settings", icon: FiSettings },
-        { name: 'Logout', path: "/logout", icon: FiPower },
+        { name: 'Home', path: "/admin", icon: FiHome },
+        { name: 'Trending', path: "/admin/trending", icon: FiTrendingUp },
+        { name: 'Explore', path: "/admin/explore", icon: FiCompass },
+        { name: 'Orders', path: "/admin/orders", icon: FiTruck },
+        { name: 'Products', path: "/admin/products", icon: FiPackage },
+        { name: 'Customers', path: "/admin/customers", icon: FiUsers },
+        { name: 'Favourites', path: "/admin/favorites", icon: FiStar },
+        { name: 'Add Product', path: "/admin/addproduct", icon: FiPlus },
+        { name: 'Support', path: "/admin/support", icon: FiHeadphones },
+        { name: 'Settings', path: "/admin/settings", icon: FiSettings },
+        { name: 'Logout', path: "/admin/logout", icon: FiPower },
     ];
     return (
         <>

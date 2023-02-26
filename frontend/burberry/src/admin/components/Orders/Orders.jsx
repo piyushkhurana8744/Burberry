@@ -11,6 +11,7 @@ const Orders = () => {
   const getOrder = async()=>{
       try{
           const data = await getOrders()
+          console.log(data)
           setOrderList(data)
       }catch(err){
 
@@ -43,7 +44,7 @@ const Orders = () => {
           <Tbody>
             {
               orderList.map((order, index) => {
-                return <OrderItem id={order.id} index={index + 1} {...order} />
+                return <OrderItem key={order.id} id={order.id} index={index + 1} {...order} />
               })
             }
           </Tbody>

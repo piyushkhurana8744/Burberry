@@ -17,7 +17,7 @@ productRouter.get("/", async (req, res) => {
         queryObj.product_price = -1
     }
 
-    const data = await ProductModel.find().sort(queryObj)
+    const data = await ProductModel.find({category:query.category}).sort(queryObj)
     res.send(data)
 })
 

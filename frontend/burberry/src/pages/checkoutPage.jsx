@@ -1,4 +1,4 @@
-import {Box,Flex,Text,Button} from "@chakra-ui/react"
+import {Box,Flex,Text,Button, useDisclosure, ModalFooter, ModalBody, ModalCloseButton, ModalHeader, ModalContent, ModalOverlay, Modal} from "@chakra-ui/react"
 import {TiTick} from "react-icons/ti"
 import { Checkbox, CheckboxGroup ,Image,Divider} from '@chakra-ui/react'
 import { useState,useEffect } from "react"
@@ -9,7 +9,8 @@ function Checkout(){
     const { name, token } = useSelector((store) => store.auth);
     const {data}=useSelector((store)=>store.cart)
     const subtotal=data.reduce((acc,el)=>acc+Number(el.product_price)*Number(el.quantity),0)
-   
+    const { isOpen, onOpen, onClose } = useDisclosure()
+    
    
     return(
        <Box>
@@ -43,7 +44,7 @@ function Checkout(){
             </Box>
           </Flex>
           <Box marginTop={"20px"} boxShadow="rgba(0, 0, 0, 0.24) 0px" >
-            <Flex backgroundColor={"#2874f0"}   alignItems={"center"} padding="10px" gap="15px">
+            <Flex backgroundColor={"black"}   alignItems={"center"} padding="10px" gap="15px">
             <Button fontWeight={"500"} height="25px">3</Button>
             <Text color={"#fff"} fontWeight="600" fontSize="20px">PAYMENT OPTIONS</Text>
             </Flex>
@@ -95,7 +96,7 @@ function Checkout(){
           </Box>
           <Box width="30%" textAlign={"start"} marginTop="30px"  boxShadow= " rgba(0, 0, 0, 0.24) 0px 3px 8px" height={"330px"} padding="20px" >
                  <Text fontSize={"24px"} color="grey" fontWeight={"600"}>Price Details</Text>
-                 <Divider border="3px solid "></Divider>
+                 <Divider border="3px solid black"></Divider>
                  <Flex justifyContent={"space-between"} marginTop="10px">
                      <Text fontSize={"17px"} fontWeight="500">Price  ({data.length} items)</Text>
                      <Text fontSize={"17px"} fontWeight="500">₹{subtotal}</Text>
@@ -112,15 +113,65 @@ function Checkout(){
                      <Text fontSize={"17px"} fontWeight="500">Secured Packaging Fee</Text>
                      <Text fontSize={"17px"} fontWeight="500">₹{29*data.length}</Text>
                  </Flex>
-                 <Divider border="3px solid " marginTop={"10px"} ></Divider>
+                 <Divider border="3px solid black" marginTop={"10px"} ></Divider>
                  <Flex justifyContent={"space-between"} marginTop="10px" alignItems={"center"}>
                      <Text fontSize={"22px"} fontWeight="500">Total Amount</Text>
                      <Text fontSize={"20px"} fontWeight="500">₹{Math.ceil(subtotal-subtotal*0.05)}</Text>
                  </Flex>
-                 <Divider border="3px solid " marginTop={"10px"} ></Divider>
+                 <Divider border="3px solid black" marginTop={"10px"} ></Divider>
                  <Text marginTop="10px" color="green" fontSize={"18px"} fontWeight="500">You will save ₹{subtotal*0.05} on this order</Text>
                  <Box marginTop="40px">
-                <Button padding="20px 80px 20px 80px" fontWeight={"600"} fontSize="20px" backgroundColor={"#fb641b"} color="white" onClick={()=>alert("Your Order is Confirmed")}>Confirm Order</Button>
+                {/* <Button padding="20px 80px 20px 80px" fontWeight={"600"} fontSize="20px" backgroundColor={"#fb641b"} color="white" onClick={()=>alert("Your Order is Confirmed")}>Confirm Order</Button> */}
+                 
+                <Box>
+              {/* <Box
+                w="90%"
+                m="auto"
+                mt="16px"
+                // _hover={{ background: "black" }}
+                cursor="pointer"
+              > */}
+                <button style={{width:"100%", backgroundColor:"black", color:"white", fontWeight:"bold",padding:"14px", borderRadius:"6px"}} onClick={onOpen}>
+                  CONFIRM AND PAY
+                </button>
+              {/* </Box> */}
+              <Modal
+                blockScrollOnMount={false}
+                isOpen={isOpen}
+                onClose={onClose}
+                bg="white"
+              >
+                <ModalOverlay />
+                <ModalContent bg="white" color={"black"}>
+                  <ModalHeader>Order Successful</ModalHeader>
+                  <ModalCloseButton />
+                  <ModalBody>
+                    <Text fontWeight="bold" mb="1rem">
+                      Yay! Thank you for shopping
+                      <Image
+                        _hover={{ scale: 1 }}
+                        w="60%"
+                        m="auto"
+                        src={
+                          "https://i.gifer.com/origin/11/1184b4c0aa977f925dde58d2075772dd_w200.gif"
+                        }
+                      />
+                    </Text>
+                  </ModalBody>
+
+                  <ModalFooter gap="12">
+                    <button style={{ width:"40%", backgroundColor:"black", color:"white", fontWeight:"bold",padding:"8px", borderRadius:"6px"}} onClick={onClose}>
+                      Close
+                    </button>
+                    <Link to={`/`}>
+                      <button style={{width:"100%", border:"1px solid black", color:"black", fontWeight:"bold",padding:"8px", borderRadius:"6px"}}>
+                        Continue Shopping
+                      </button>
+                    </Link>
+                  </ModalFooter>
+                </ModalContent>
+              </Modal>
+            </Box>
                  </Box>
                  
              </Box>

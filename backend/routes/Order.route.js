@@ -34,7 +34,7 @@ orderRouter.get("/admin/order", async (req, res) => {
 })
 
 orderRouter.post("/", async (req, res) => {
-    const orders = req.body
+    const orders = req.body.orders
     try {
         await OrderModel.insertMany(orders)
         res.send({ msg: "Order Placed Successfully" })

@@ -29,7 +29,7 @@ const Homepage = () => {
                 <Box  paddingBottom={"10px"}>
                 <Image src="https://mediaslide-europe.storage.googleapis.com/success/news_pictures/2023/02/large-1675680362-7d170db1479af6fa18591034f2c6b110.jpg" width="100%" height="600px"></Image>
                 <Text fontSize="30px" fontWeight={"300"} marginTop="-10px" backgroundColor={"#d9d8db"} color="white" paddingBottom={"10px"} textAlign="left">
-                    geCllection
+                    geCollection
                 </Text>
                 </Box>
                 
@@ -45,8 +45,8 @@ const Homepage = () => {
             </Box>
             <Box>
                <Text fontSize={"38px"} fontWeight="500">Children</Text>
-               <Text fontSize={"38px"} fontWeight="500" marginTop='-20px'>The Trench Coat</Text>
-               <Text fontSize={"38px"} fontWeight="500" marginTop='-20px'>SCARVES</Text>
+               <Text fontSize={"38px"} fontWeight="500">The Trench Coat</Text>
+               <Text fontSize={"38px"} fontWeight="500">SCARVES</Text>
             </Box>
             <hr />
         </Box>

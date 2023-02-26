@@ -41,7 +41,7 @@ const Footer = () => {
                </Flex>
             </Box>
             <hr marginTop="20px"/>
-            <Box textAlign={"start"} width="90%" margin={"auto"} lineHeight="10px" paddingBottom={"20px"}>
+            <Box textAlign={"start"} width="90%" margin={"auto"} lineHeight="30px" paddingBottom={"20px"}>
                 <Text fontSize={"14px"} color="grey">If you are using a screen-reader and are having problems using this website, please call variable_country_customer_service_phone or contact us for assistance.</Text>
                 <Text fontSize={"14px"} color="grey">Burberry Limited, Horseferry House, Horseferry Road, London, SW1P 2AW</Text>
                 <Text fontSize={"14px"} color="grey">Registered in England & Wales</Text>

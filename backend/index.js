@@ -9,6 +9,8 @@ const userRouter=require("./routes/User.route")
 
 const productRouter = require("./routes/Product.route")
 
+const cartRouter=require("./routes/CartRoute")
+
 app.use(cors())
 // -------------------------------------------------------------
 app.use(express.json())
@@ -16,6 +18,8 @@ app.use(express.json())
 app.use("/user",userRouter)
 
 app.use("/products",productRouter)
+
+app.use("/cart",cartRouter)
 
 // -------------------------SERVER-------------------------------
 app.listen(process.env.port,async()=>{

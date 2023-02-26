@@ -4,7 +4,7 @@ import axios from "axios"
 
 export const productdata=()=>async(dispatch)=>{
     const token=localStorage.getItem("token")
-    const res=await axios.get("http://localhost:8080/cart",{
+    const res=await axios.get("https://white-lovebird-ring.cyclic.app/cart",{
         headers:{
             Authorization:token
         }
@@ -15,7 +15,7 @@ export const productdata=()=>async(dispatch)=>{
 
 export const AddProductData=(product)=>async(dispatch)=>{
     const token=localStorage.getItem("token")
-    const res=await axios.post("http://localhost:8080/cart/create",product,{
+    const res=await axios.post("https://white-lovebird-ring.cyclic.app/cart/create",product,{
         headers:{
             'Content-Type': 'application/json',
             Authorization:token
@@ -27,7 +27,7 @@ export const AddProductData=(product)=>async(dispatch)=>{
 }
 export const PatchProductData=(el)=>async(dispatch)=>{
     const token=localStorage.getItem("token")
-    const res=await axios.patch(`http://localhost:8080/cart/${el._id}`,{quantity:Number(el.quantity)+1},{
+    const res=await axios.patch(`https://white-lovebird-ring.cyclic.app/cart/${el._id}`,{quantity:Number(el.quantity)+1},{
         headers:{
             "Content-Type": "application/json",
         Authorization: token,
@@ -39,7 +39,7 @@ export const PatchProductData=(el)=>async(dispatch)=>{
 }
 export const SubProductData=(el)=>async(dispatch)=>{
     const token=localStorage.getItem("token")
-    const res=await axios.patch(`http://localhost:8080/cart/${el._id}`,{quantity:Number(el.quantity)-1},{
+    const res=await axios.patch(`https://white-lovebird-ring.cyclic.app/cart/${el._id}`,{quantity:Number(el.quantity)-1},{
         headers:{
             "Content-Type": "application/json",
         Authorization: token,
@@ -52,7 +52,7 @@ export const SubProductData=(el)=>async(dispatch)=>{
 
 export const DeleteProductData=(id)=>async(dispatch)=>{
     const token=localStorage.getItem("token")
-    const res=await axios.delete(`http://localhost:8080/cart/${id}`,{
+    const res=await axios.delete(`https://white-lovebird-ring.cyclic.app/cart/${id}`,{
         headers:{
             Authorization:token
         }

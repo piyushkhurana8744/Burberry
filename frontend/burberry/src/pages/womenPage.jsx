@@ -10,7 +10,7 @@ const WomenPage = () => {
     const [sort, setSort] = useState("")
 
     const getProducts = async () => {
-        const { data } = await axios.get(`http://localhost:8080/products?category=Women&price=${sort}`);
+        const { data } = await axios.get(`https://white-lovebird-ring.cyclic.app/products?category=Women&price=${sort}`);
         setProducts(data)
     }
     const changeCategory = (category) => {

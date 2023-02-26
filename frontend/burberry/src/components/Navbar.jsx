@@ -5,6 +5,7 @@ import { FaUserAlt } from "react-icons/fa"
 import { Link, useLocation } from "react-router-dom"
 import { useSelector } from 'react-redux'
 import Menubar from './MenuItem'
+import { BsHandbagFill } from "react-icons/bs"
 const Navbar = () => {
   const location = useLocation();
 
@@ -33,6 +34,7 @@ const Navbar = () => {
             <Icon as={AiOutlineSearch} fontSize={"20px"} fontWeight="500" />
             <Menubar />
           </Flex>
+          <Link to="/cartpage"><Icon as={BsHandbagFill} fontSize={"20px"} fontWeight="500" /></Link>
         </Flex>
       </Box>
     </div>

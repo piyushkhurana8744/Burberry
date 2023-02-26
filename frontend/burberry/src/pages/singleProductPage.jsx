@@ -5,9 +5,12 @@ import axios from 'axios';
 import styles from "./singleProductPage.module.css"
 import {RiStore3Fill} from "react-icons/ri"
 import {BsFillCalendarCheckFill} from "react-icons/bs"
+import { useDispatch } from 'react-redux';
+import { AddProductData } from '../redux/CartReducer/action';
 
 const SingleProductPage = () =>{
     const { isOpen, onOpen, onClose } = useDisclosure()
+    const dispatch=useDispatch()
     const {id} = useParams();
     const [product, setProduct] = useState({})
 
@@ -19,6 +22,7 @@ const SingleProductPage = () =>{
     useEffect(() => {
         getProduct()
     }, [id])
+    console.log(product)
     return(
         <div>
         <Box backgroundColor={"white"} marginBottom="36px">
@@ -42,14 +46,14 @@ const SingleProductPage = () =>{
                     <Text fontSize={"14px"} color="#333" fontWeight={"400"} py={"16px"}>Size Chart</Text>
                     </Flex>
                     <Flex alignItems={"center"} color={"black"} py={"16px"}>
-                    <Text padding="10px" margin={"0 8px 8px 0"} minWidth="64px"  fontWeight={"400"} align={"center"} fontSize="14px" lineHeight={"20px"} _hover={{border:"1px solid black"}}>0</Text>
-                    <Text _hover={{border:"1px solid black"}} padding="10px" margin={"0 8px 8px 0"} minWidth="64px"  fontWeight={"400"} align={"center"} fontSize="14px" lineHeight={"20px"}>02</Text>
-                    <Text _hover={{border:"1px solid black"}} padding="10px" margin={"0 8px 8px 0"} minWidth="64px"  fontWeight={"400"} align={"center"} fontSize="14px" lineHeight={"20px"}>04</Text>
-                    <Text _hover={{border:"1px solid black"}} padding="10px" margin={"0 8px 8px 0"} minWidth="64px"  fontWeight={"400"} align={"center"} fontSize="14px" lineHeight={"20px"}>06</Text>
-                    <Text _hover={{border:"1px solid black"}} padding="10px" margin={"0 8px 8px 0"} minWidth="64px"  fontWeight={"400"} align={"center"} fontSize="14px" lineHeight={"20px"}>08</Text>
-                    <Text _hover={{border:"1px solid black"}} padding="10px" margin={"0 8px 8px 0"} minWidth="64px"  fontWeight={"400"} align={"center"} fontSize="14px" lineHeight={"20px"}>10</Text>
-                    <Text _hover={{border:"1px solid black"}} padding="10px" margin={"0 8px 8px 0"} minWidth="64px"  fontWeight={"400"} align={"center"} fontSize="14px" lineHeight={"20px"}>12</Text>
-                    <Text _hover={{border:"1px solid black"}} padding="10px" margin={"0 8px 8px 0"} minWidth="64px"  fontWeight={"400"} align={"center"} fontSize="14px" lineHeight={"20px"}>14</Text>
+                    <Text padding="10px" margin={"0 8px 8px 0"} minWidth="64px"  fontWeight={"400"} align={"center"} fontSize="14px" lineHeight={"20px"} _hover={{border:"1px solid black"}} border="1px solid white" cursor={"pointer"}>0</Text>
+                    <Text _hover={{border:"1px solid black"}} border="1px solid white" cursor={"pointer"} padding="10px" margin={"0 8px 8px 0"} minWidth="64px"  fontWeight={"400"} align={"center"} fontSize="14px" lineHeight={"20px"}>02</Text>
+                    <Text _hover={{border:"1px solid black"}} border="1px solid white" cursor={"pointer"} padding="10px" margin={"0 8px 8px 0"} minWidth="64px"  fontWeight={"400"} align={"center"} fontSize="14px" lineHeight={"20px"}>04</Text>
+                    <Text _hover={{border:"1px solid black"}} border="1px solid white" cursor={"pointer"} padding="10px" margin={"0 8px 8px 0"} minWidth="64px"  fontWeight={"400"} align={"center"} fontSize="14px" lineHeight={"20px"}>06</Text>
+                    <Text _hover={{border:"1px solid black"}} border="1px solid white" cursor={"pointer"} padding="10px" margin={"0 8px 8px 0"} minWidth="64px"  fontWeight={"400"} align={"center"} fontSize="14px" lineHeight={"20px"}>08</Text>
+                    <Text _hover={{border:"1px solid black"}} border="1px solid white" cursor={"pointer"} padding="10px" margin={"0 8px 8px 0"} minWidth="64px"  fontWeight={"400"} align={"center"} fontSize="14px" lineHeight={"20px"}>10</Text>
+                    <Text _hover={{border:"1px solid black"}} border="1px solid white" cursor={"pointer"} padding="10px" margin={"0 8px 8px 0"} minWidth="64px"  fontWeight={"400"} align={"center"} fontSize="14px" lineHeight={"20px"}>12</Text>
+                    <Text _hover={{border:"1px solid black"}} border="1px solid white" cursor={"pointer"} padding="10px" margin={"0 8px 8px 0"} minWidth="64px"  fontWeight={"400"} align={"center"} fontSize="14px" lineHeight={"20px"}>14</Text>
                     </Flex>
                     <hr/>
                     <Text align={"left"} py={"16px"}>Free Shipping and Returns 
@@ -81,7 +85,7 @@ const SingleProductPage = () =>{
                         </Link>
                     </Text>
                     <Flex gap={"16px"} paddingBottom="30px">
-                        <button className={styles.bagBtn}>ADD TO BAG</button>
+                        <button className={styles.bagBtn} onClick={()=>dispatch(AddProductData(product))}>ADD TO BAG</button>
                         <button style={{width:"280px", height:"42px", textTransform:"uppercase", border:"1px solid black"}} className={styles.giftBtn}>Send using Gift</button>    
                     </Flex>
                     <Flex alignItems={"center"}>

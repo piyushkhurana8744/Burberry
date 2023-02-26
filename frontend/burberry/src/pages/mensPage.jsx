@@ -1,9 +1,20 @@
 import { Box, Button, Grid, Heading, HStack, Text } from '@chakra-ui/react'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { RiArrowDownSLine } from "react-icons/ri"
 import Product from '../components/product'
 
 const MensPage = () => {
+
+    const getProducts = async () => {
+        const res = await fetch("http://localhost:8080/products");
+        const data = await res.json();
+        console.log(data)
+    }
+
+    useEffect(() => {
+        getProducts()
+    }, [])
+
     return (
         <Box pb="50px">
             <Heading fontSize="16px">MEN’S OUTERWEAR</Heading>
@@ -22,14 +33,14 @@ const MensPage = () => {
             <Text fontSize="12px">201 results</Text>
             <Text fontWeight="500">Discover Heritage Trench Coats</Text>
             <Grid mt="50px" mb="50px" gap="2px" gridTemplateColumns="repeat(4,1fr)">
-                <Product/>
-                <Product/>
-                <Product/>
-                <Product/>
-                <Product/>
-                <Product/>
-                <Product/>
-                <Product/>
+                <Product />
+                <Product />
+                <Product />
+                <Product />
+                <Product />
+                <Product />
+                <Product />
+                <Product />
             </Grid>
             <Button textTransform="uppercase" cursor="pointer" bg="transparent" padding="12px 40px">View 11 More</Button>
         </Box>

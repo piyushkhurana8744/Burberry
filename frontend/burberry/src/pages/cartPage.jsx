@@ -4,6 +4,7 @@ import {useEffect} from "react"
 import { DeleteProductData, PatchProductData, productdata, SubProductData } from '../redux/CartReducer/action'
 import {Box,Flex,Text,Image,Button,Icon,Wrap} from "@chakra-ui/react"
 import {TbTruckDelivery} from "react-icons/tb"
+import {Link} from "react-router-dom"
 const CartPage = () => {
   const {data}=useSelector((store)=>store.cart)
   const dispatch=useDispatch()
@@ -86,7 +87,7 @@ console.log(subtotal)
             <Text fontWeight={"500"} fontSize="20px" >${subtotal+Number(subtotal)*0.05}</Text>
             </Box>
           </Flex>
-          <Button marginTop="20px" padding="10px 110px 10px 110px" marginLeft={"30px"} backgroundColor="#000000" color="white">Checkout ({data.length})</Button>
+          <Link to="/checkout"><Button marginTop="20px" padding="10px 110px 10px 110px" marginLeft={"30px"} backgroundColor="#000000" color="white">Checkout ({data.length})</Button></Link>
           </Box>
           <Flex gap="10px" marginTop="20px">
             <Image src="https://content.shoprunner.com/assets/pik_images/v4/_sr_logo.svg"></Image>

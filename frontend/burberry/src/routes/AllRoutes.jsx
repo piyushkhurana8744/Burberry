@@ -7,6 +7,7 @@ import SignIn from '../pages/signup'
 import LoginPage from '../pages/login'
 import WomenPage from '../pages/womenPage'
 import SingleProductPage from '../pages/singleProductPage'
+import KidsPage from '../pages/kidsPage'
 
 const AllRoutes = () => {
     return (
@@ -14,6 +15,7 @@ const AllRoutes = () => {
             <Route path='/' element={<Homepage />} />
             <Route path='/mens' element={<MensPage />} />
             <Route path='/womens' element={<WomenPage />} />
+            <Route path='/kids' element={<KidsPage />} />
             <Route path='/products/:id' element={<SingleProductPage />} />
             <Route path="/admin" element={<AdminHome />}></Route>
             <Route path="/signup" element={<SignIn />}></Route>

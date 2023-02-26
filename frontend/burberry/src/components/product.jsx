@@ -1,19 +1,27 @@
 import { Box, Heading, Image, Text } from '@chakra-ui/react'
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
-const Product = () => {
+const Product = ({_id, product_img, product_title, product_price }) => {
+  const navigate = useNavigate();
+
+
+
   return (
-    <Box fontSize="12px" pb="50px">
-        <Image width="100%" src='https://assets.burberry.com/is/image/Burberryltd/3332191E-4C4F-4A67-91D1-9F3A57B17DA2?$BBY_V2_SL_1x1$&wid=1251&hei=1251' />
-        <Heading fontSize="14px">
-        Short Kensington Heritage Trench Coat
-        </Heading>
-        <Text>
-            3 Colours
-        </Text>
-        <Text textTransform="uppercase">
-            Regular fit
-        </Text>
+    <Box onClick={()=>navigate(`/products/${_id}`)} cursor="pointer" fontSize="12px" pb="50px">
+      <Image width="100%" src={product_img} alt={product_title} />
+      <Heading mt="30px" fontSize="14px">
+        {product_title}
+      </Heading>
+      <Text>
+        3 Colours
+      </Text>
+      <Text textTransform="uppercase">
+        ₹ {product_price}
+      </Text>
+      <Text textTransform="uppercase">
+        Regular fit
+      </Text>
     </Box>
   )
 }

@@ -7,26 +7,26 @@ import Orders from './Orders/Orders'
 import Products from './Products/Products'
 import Users from './Users/Users'
 
-const AllRoutes = () => {
+const AdminRoutes = () => {
     return (
         <Box p="20px 20px 20px 27px" py="20px" bg="#f5f5f5">
             <Routes>
-                <Route path="/" element={<Home />} />
+                <Route path="/admin" element={<Home />} />
             </Routes>
             <Routes>
-                <Route path="/orders" element={<Orders />} />
+                <Route path="/admin/orders" element={<Orders />} />
             </Routes>
             <Routes>
-                <Route path="/products" element={<Products />} />
+                <Route path="/admin/products" element={<Products />} />
             </Routes>
             <Routes>
-                <Route path="/customers" element={<Users>Customers</Users>} />
+                <Route path="/admin/customers" element={<Users>Customers</Users>} />
             </Routes>
             <Routes>
-                <Route path="/addproduct" element={<AddProduct />} />
+                <Route path="/admin/addproduct" element={<AddProduct />} />
             </Routes>
         </Box>
     )
 }
 
-export default AllRoutes
+export default AdminRoutes

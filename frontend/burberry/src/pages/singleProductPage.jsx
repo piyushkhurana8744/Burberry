@@ -33,7 +33,7 @@ const SingleProductPage = () =>{
                 <Box paddingLeft={"8%"}>
                     <Text color={"#333"} align={"left"} cursor={"pointer"} w="40%" py={"30px"}>Women |  New Arrivals  |  New In</Text>
                     <Text color={"black"} align={"left"} fontWeight="500" paddingBottom={"24px"}>{product.product_title}</Text>
-                    <Text color={"#333"} align={"left"} fontSize="14px" fontWeight={"400"} paddingBottom="8px">${product.product_price}</Text>
+                    <Text color={"#333"} align={"left"} fontSize="14px" fontWeight={"400"} paddingBottom="8px">₹{product.product_price}</Text>
                     <Text align={"left"} color={"#666666"} fontSize="12px" paddingBottom={"16px"}>Instalment payments available</Text>
                     <hr/>
                     <Flex alignItems={"center"} gap="8px">

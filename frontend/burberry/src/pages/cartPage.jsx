@@ -46,7 +46,7 @@ console.log(subtotal)
             <Text fontWeight={"500"} fontSize="18px">{el.product_title}</Text>
             <Text fontWeight={"500"} fontSize="18px">Category: {el.product_category}</Text>
             <Flex gap="20px">
-              <Text fontWeight={"500"} fontSize="18px">price: {Number(el.product_price)*Number(el.quantity)}$</Text>
+              <Text fontWeight={"500"} fontSize="18px">price: ₹{Number(el.product_price)*Number(el.quantity)}</Text>
               <Flex gap="10px">
               <Text fontWeight={"500"} fontSize="18px">Quantity : </Text>
               <Text fontWeight={"600"} fontSize="22px" cursor={"pointer"} disabled={Number(el.quantity)==1} onClick={()=>handleSub(el)}>-</Text>
@@ -64,7 +64,7 @@ console.log(subtotal)
           <Flex gap="30px">
             <Box width="70%"><Text fontWeight={"500"} fontSize="17px">Subtotal</Text></Box>
             <Box width="20%">
-            <Text fontWeight={"500"} fontSize="17px">${subtotal}</Text>
+            <Text fontWeight={"500"} fontSize="17px">₹{subtotal}</Text>
             </Box>
            
           </Flex>
@@ -77,17 +77,17 @@ console.log(subtotal)
           <Flex gap="30px" marginTop="10px">
           <Box width="70%"><Text fontWeight={"500"} fontSize="17px">Sales Tax</Text></Box>
             <Box width="30%">
-            <Text fontWeight={"500"}  fontSize="18px">{Number(subtotal)*0.05}$</Text>
+            <Text fontWeight={"500"}  fontSize="18px">₹{Number(subtotal)*0.05}</Text>
             </Box>
           </Flex>
           <hr />
           <Flex gap="30px" marginTop="10px">
           <Box width="70%"><Text fontWeight={"500"} fontSize="20px">Total</Text></Box>
             <Box width="20%">
-            <Text fontWeight={"500"} fontSize="20px" >${subtotal+Number(subtotal)*0.05}</Text>
+            <Text fontWeight={"500"} fontSize="20px" >₹{subtotal+Number(subtotal)*0.05}</Text>
             </Box>
           </Flex>
-          <Link to="/checkout"><Button marginTop="20px" padding="10px 110px 10px 110px" marginLeft={"30px"} backgroundColor="#000000" color="white">Checkout ({data.length})</Button></Link>
+          <Link to="/checkout"><Button marginTop="20px" padding="10px 110px 10px 110px" fontWeight={"bold"} marginLeft={"30px"} backgroundColor="#000000" color="white" _hover={{backgroundColor:"white", color:"black", border:"2px solid black", fontWeight:"bold"}}>CHECKOUT ({data.length})</Button></Link>
           </Box>
           <Flex gap="10px" marginTop="20px">
             <Image src="https://content.shoprunner.com/assets/pik_images/v4/_sr_logo.svg"></Image>

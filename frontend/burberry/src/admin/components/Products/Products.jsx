@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet'
 import { Box, Grid } from '@chakra-ui/react'
-import { getProductsApi } from '../Utils/productApi'
+import { getProductsApi } from '../Utils/database'
 import ProductCard from './ProductCard'
 import { getProducts } from '../Utils/database'
 
@@ -27,7 +27,7 @@ const Products = () => {
         <Grid gridTemplateColumns="repeat(4,1fr)" gap="4">
           {
             products?.map((item) => {
-              return <ProductCard key={item.id} imgUrl={item.image} {...item} price={item.actualPrice} description={item.subtitle}/>
+              return <ProductCard key={item._id} imgUrl={item.product_img} {...item} price={item.product_price} description={item.product_desc}/>
             })
           }
         </Grid>

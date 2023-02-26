@@ -19,8 +19,8 @@ const Pagination = () => {
         <FiChevronLeft />
       </Button>
       {
-        cells.map((pageNo) => {
-          return <Cell currPage={currPage} pageNo={pageNo} />
+        cells.map((pageNo,index) => {
+          return <Cell key={index} currPage={currPage} pageNo={pageNo} />
         })
       }
       <Button onClick={() => setCurrPage(currPage + 1)}  disabled={currPage >= totalPage}>

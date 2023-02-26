@@ -1,15 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet'
-import { Box, Flex, Grid, VStack } from '@chakra-ui/react'
-import { FiTruck, FiUsers } from 'react-icons/fi'
+import { Grid, VStack } from '@chakra-ui/react'
+import { FiTruck } from 'react-icons/fi'
 import { BsCashCoin } from 'react-icons/bs'
 import Orders from '../Orders/Orders'
 import StatsCard from './StatsCard'
 import { getStatsApi } from '../Utils/database'
-import Navbar from '../Navbar/Navbar'
-import Sidebar from '../Sidebar/Sidebar'
 
-const Home = () => {
+const HomeStats = () => {
   const [data, setData] = useState({ pending: "0", delivered: "0", profit: "0" })
 
   const statsData = [
@@ -46,23 +44,15 @@ const Home = () => {
       <Helmet>
         <title>Dashboard</title>
       </Helmet>
-      <Navbar />
-
-      <Flex>
-        <Box w="15%" position="relative"  transition="1s ease" overflow="hidden" border="1px solid #e4e4e4" minHeight="100vh">
-          <Sidebar />
-        </Box>
-        <Box flex="1" minHeight="100vh">
-          <Box minHeight="89vh">
-          <VStack spacing="20px" align="stretch" p="20px" border="1px solid #e4e4e4" minHeight="85vh" bg="white">
-          <Grid gap="20px" gridTemplateColumns="repeat(3,1fr)" gridTemplateRows="180px">
-            {
-              statsData.map((stat) => {
-                return <StatsCard key={stat.id} {...stat} />
-              })
-            }
-          </Grid>
-          {/* <Grid gap="20px" gridTemplateColumns="repeat(2,1fr)" gridTemplateRows="200px">
+      <VStack spacing="20px" align="stretch" p="20px" border="1px solid #e4e4e4" minHeight="85vh" bg="white">
+        <Grid gap="20px" gridTemplateColumns="repeat(3,1fr)" gridTemplateRows="180px">
+          {
+            statsData.map((stat) => {
+              return <StatsCard key={stat.id} {...stat} />
+            })
+          }
+        </Grid>
+        {/* <Grid gap="20px" gridTemplateColumns="repeat(2,1fr)" gridTemplateRows="200px">
           <Box border="1px solid #e4e4e4">
 
           </Box>
@@ -70,13 +60,10 @@ const Home = () => {
 
           </Box>
         </Grid> */}
-          <Orders />
-        </VStack>
-          </Box>
-        </Box>
-      </Flex>
+        <Orders />
+      </VStack>
     </>
   )
 }
 
-export default Home
+export default HomeStats
